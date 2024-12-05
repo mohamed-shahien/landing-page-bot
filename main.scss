@@ -80,23 +80,13 @@ main {
 }
 
 .marquee {
-        overflow: hidden;
+
         padding: 0 !important;
         min-height: 80px;
-        position: relative;
         background-color: #F2DFFB;
-        display: flex;
-        align-items: center;
         width: 100vw;
         left: 50%;
         transform: translateX(-50%);
-
-        .swiper {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                overflow: hidden;
-        }
 
         .swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) img {
                 position: absolute;
@@ -104,10 +94,8 @@ main {
         }
 
         .swiper-wrapper {
-                align-items: center;
                 -webkit-transition-timing-function: linear !important;
                 transition-timing-function: linear !important;
-                position: relative;
         }
 
 
@@ -128,7 +116,6 @@ main {
         }
 
         .glow {
-                position: absolute;
                 width: 200px;
                 height: 200px;
                 background: rgba(161, 207, 255, 0.7);
@@ -153,18 +140,12 @@ main {
 }
 
 .testimonials {
-        text-align: center;
-        overflow: hidden;
         padding: 38px;
-
         h2 {
                 font-size: 24px;
                 margin-bottom: 32px;
         }
-
         .swiper-container {
-                width: 100%;
-
                 .swiper-slide {
                         display: flex;
                         justify-content: center;

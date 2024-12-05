@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
             0: {
                 slidesPerView: 1.1
             },
+            300: {
+                slidesPerView: 1.5
+            },
             768: {
                 slidesPerView: 3
             }
@@ -89,35 +92,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // التعامل مع جميع التبويبات
         tabs.forEach((button) => {
             button.addEventListener('click', () => {
-                // إخفاء كل التبويبات
                 document.querySelectorAll('.plans').forEach((plan) => {
                     plan.style.display = 'none';
                 });
 
-                // عرض التبويب النشط
                 document.getElementById(button.dataset.tab).style.display = 'flex';
 
-                // إعادة تعيين ألوان كل الأزرار إلى اللون الافتراضي
                 tabs.forEach(tab => tab.style.color = '#ffffff');
 
-                // إعادة ضبط تأثير السطوع لجميع العناصر
+
                 brightness.forEach(l => {
-                    l.style.filter = "brightness(100%)"; // تعتيم جميع الصور
+                    l.style.filter = "brightness(100%)"; 
                 });
 
-                // تغيير لون التبويب النشط
                 button.style.color = '#000';
 
-                // تحديث المؤشر
                 updateIndicator(button);
 
-                // إعادة السطوع للصورة الخاصة بالتبويب النشط
                 const activeImage = button.querySelector('.brightness');
                 if (activeImage) {
-                    activeImage.style.filter = "brightness(0%)"; // إعادة السطوع للتبويب النشط
+                    activeImage.style.filter = "brightness(0%)";
                 }
             });
         });

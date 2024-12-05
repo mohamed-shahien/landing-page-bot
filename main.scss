@@ -153,97 +153,97 @@ main {
 }
 
 .testimonials {
-  @extend .text-center;
-  overflow: hidden;
-  padding: 38px;
+        text-align: center;
+        overflow: hidden;
+        padding: 38px;
 
-  h2 {
-    font-size: 24px;
-    margin-bottom: 32px;
-  }
+        h2 {
+                font-size: 24px;
+                margin-bottom: 32px;
+        }
 
-  .swiper-container {
-    width: 100%;
+        .swiper-container {
+                width: 100%;
 
-    .swiper-slide {
-      @extend .d-flex;
-      @extend .justify-content-center;
-      transition: all 0.5s ease-in-out;
-      width: 100%;
+                .swiper-slide {
+                        display: flex;
+                        justify-content: center;
+                        transition: all 0.5s ease-in-out;
+                        width: 100%;
 
-      &.swiper-slide-prev,
-      &.swiper-slide-next {
-        opacity: 0.80;
-        filter: blur(4px);
-      }
+                        &.swiper-slide-prev,
+                        &.swiper-slide-next {
+                                opacity: 0.80;
+                                filter: blur(4px);
+                        }
 
-      &.swiper-slide-active {
-        opacity: 1;
-        z-index: 2;
-        filter: blur(0);
-        transform: scale(1.1);
+                        &.swiper-slide-active {
+                                opacity: 1;
+                                z-index: 2;
+                                filter: blur(0);
+                                transform: scale(1.1);
+
+                                .testimonial-card {
+                                        border: 1.5px solid #FF5DE5;
+                                        background: linear-gradient(262deg, rgba(255, 93, 229, 0.20) -20.25%, rgba(202, 215, 255, 0.20) 100%);
+                                        backdrop-filter: blur(22px);
+                                }
+                        }
+                }
+        }
 
         .testimonial-card {
-          border: 1.5px solid #FF5DE5;
-          background: linear-gradient(262deg, rgba(255, 93, 229, 0.20) -20.25%, rgba(202, 215, 255, 0.20) 100%);
-          backdrop-filter: blur(22px);
+                background: linear-gradient(145deg, #f8e7ff, #ffffff);
+                padding: 20px;
+                border-radius: 15px;
+                max-width: 400px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                direction: rtl;
+
+                p {
+                        @media (max-width: 768px) {
+                                font-size: 12px;
+                        }
+                }
+
+                blockquote {
+                        font-size: 16px;
+                        color: #555;
+                        margin-bottom: 20px;
+                        position: relative;
+
+                        i {
+                                font-size: 28px;
+                        }
+                }
+
+                .testimonial-info {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        gap: 10px;
+
+                        img {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                        }
+
+                        .info-text {
+                                h4 {
+                                        font-size: 14px;
+                                        margin: 0;
+                                }
+
+                                span {
+                                        font-size: 14px;
+                                        color: gold;
+                                }
+                        }
+                }
         }
-      }
-    }
-  }
-
-  .testimonial-card {
-    background: linear-gradient(145deg, #f8e7ff, #ffffff);
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    @extend .text-end;
-    direction: rtl;
-
-    p {
-      @media (max-width: 768px) {
-        font-size: 12px;
-      }
-    }
-
-    blockquote {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 20px;
-      position: relative;
-
-      i {
-        font-size: 28px;
-      }
-    }
-
-    .testimonial-info {
-      @extend .d-flex;
-      @extend .align-items-center;
-      @extend .justify-content-between;
-      gap: 10px;
-
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .info-text {
-        h4 {
-          font-size: 14px;
-          margin: 0;
-        }
-
-        span {
-          font-size: 14px;
-          color: gold;
-        }
-      }
-    }
-  }
 }
 
 
@@ -256,7 +256,7 @@ main {
 
         @media (max-width:768px) {
                 flex-direction: column-reverse;
-                gap:30px;
+                gap: 30px;
         }
 
         .selver_blur {
@@ -299,10 +299,12 @@ main {
                 .robot-img {
                         width: 100%;
                         max-width: 524px;
+
                         @media (max-width:768px) {
                                 max-width: 260px;
-                        
+
                         }
+
                         animation: shake 1.5s infinite;
                 }
 
@@ -342,16 +344,18 @@ main {
         gap: 40px;
         width: fit-content;
         color: #FFF;
-        font-size: clamp(1rem, 0.7466rem + 1.0811vw, 1.625rem); 
+        font-size: clamp(1rem, 0.7466rem + 1.0811vw, 1.625rem);
         line-height: normal;
         font-weight: 600;
         border-radius: 80px;
         background: #161D6F;
         box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.70) inset;
+
         @media (max-width:768px) {
                 gap: 8px;
-        
+
         }
+
         &:hover {
                 svg {
                         transform: translateX(-5px);
@@ -365,9 +369,11 @@ main {
         &>svg {
                 width: 34px;
                 margin-left: 10px;
+
                 @media (max-width:768px) {
-                height: 22px;
+                        height: 22px;
                 }
+
                 transition: transform 0.3s ease-in-out;
         }
 }
@@ -379,7 +385,6 @@ main {
         align-items: center;
         text-align: center;
         flex-direction: column;
-        padding: 20px;
 
         // التبويبات
         .tabs {
@@ -392,6 +397,14 @@ main {
                 background: linear-gradient(90deg, #161D6F 0%, #0B2F9F 100%);
                 position: relative;
 
+                .logopart,
+                .brightness {
+                        @media (max-width:768px) {
+                                width: 18px !important;
+                                height: auto;
+                        }
+                }
+
                 .tab-button {
                         display: flex;
                         align-items: center;
@@ -399,13 +412,15 @@ main {
                         gap: 8px;
                         cursor: pointer;
                         transition: all 0.3s;
-                        padding: 8px 93px;
+                        padding-inline: clamp(1.25rem, -0.7056rem + 8.6914vw, 5.813rem);
+                        padding-block: 8px;
                         color: #FFF;
-                        font-size: 36px;
+                        font-size: clamp(0.875rem, 0.2857rem + 2.6190vw, 2.25rem);
                         font-weight: 500;
                         line-height: normal;
                         text-decoration: none;
                         z-index: 1;
+                        
                 }
 
                 .indicator {
@@ -421,23 +436,44 @@ main {
                 }
         }
 
-        // الخطط
         .plans {
                 display: flex;
                 justify-content: center;
                 gap: 20px;
 
+                @media (max-width:768px) {
+                        flex-wrap: wrap;
+                }
+
+                width: 100%;
+
                 .plan-card {
                         background: linear-gradient(to bottom, #fff, #f9f9f9);
-                        width: 300px;
+                        min-width: 160px;
+                        width: 100%;
+                        max-width: 513px;
                         padding: 20px;
                         box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.15);
                         text-align: left;
                         border-radius: 16px;
+                        transform: scale(0.95);
+                        -webkit-transform: scale(0.95);
+                        -moz-transform: scale(0.95);
+                        -ms-transform: scale(0.95);
+                        -o-transform: scale(0.95);
+
+                        @media (max-width:768px) {
+                                width: max-content;
+                        }
 
                         &.default_center {
                                 position: relative;
                                 overflow: hidden;
+                                transform: scale(1);
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                -ms-transform: scale(1);
+                                -o-transform: scale(1);
 
                                 .glow {
                                         position: absolute;
@@ -470,6 +506,12 @@ main {
                                                 transform: translate(50%, -50%);
                                         }
                                 }
+
+                                ul.defult li:before {
+                                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Cpath d='M10.6293 1.68042C10.2884 1.97094 10.1179 2.11621 9.93589 2.23823C9.51854 2.51796 9.04984 2.7121 8.55694 2.80941C8.34191 2.85186 8.11865 2.86968 7.67211 2.90531L7.6721 2.90532C6.55017 2.99485 5.9892 3.03961 5.52119 3.20492C4.43871 3.58726 3.58726 4.43871 3.20492 5.52119C3.03961 5.9892 2.99485 6.55017 2.90532 7.6721L2.90531 7.67211C2.86968 8.11865 2.85186 8.34191 2.80941 8.55694C2.7121 9.04984 2.51796 9.51854 2.23823 9.93589C2.11621 10.1179 1.97094 10.2884 1.6804 10.6293L1.68038 10.6294C0.950368 11.486 0.585346 11.9143 0.371302 12.3621C-0.123767 13.3979 -0.123767 14.6021 0.371302 15.6379C0.585348 16.0857 0.950358 16.514 1.68038 17.3706L1.68039 17.3707C1.9709 17.7115 2.11621 17.8821 2.23823 18.0641C2.51796 18.4815 2.7121 18.9502 2.80941 19.4431C2.85186 19.6581 2.86968 19.8814 2.90531 20.3279L2.90532 20.3279C2.99485 21.4498 3.03961 22.0108 3.20492 22.4788C3.58726 23.5613 4.43871 24.4127 5.52119 24.7951C5.9892 24.9604 6.55016 25.0052 7.67206 25.0947L7.67211 25.0947C8.11865 25.1303 8.34192 25.1481 8.55694 25.1906C9.04984 25.2879 9.51854 25.482 9.93588 25.7618C10.1179 25.8838 10.2884 26.0291 10.6294 26.3196C11.486 27.0496 11.9143 27.4147 12.3622 27.6287C13.3979 28.1238 14.6021 28.1238 15.6379 27.6287C16.0857 27.4147 16.514 27.0496 17.3706 26.3196C17.7116 26.0291 17.8821 25.8838 18.0641 25.7618C18.4815 25.482 18.9502 25.2879 19.4431 25.1906C19.6581 25.1481 19.8814 25.1303 20.3279 25.0947L20.3279 25.0947C21.4498 25.0052 22.0108 24.9604 22.4788 24.7951C23.5613 24.4127 24.4127 23.5613 24.7951 22.4788C24.9604 22.0108 25.0052 21.4498 25.0947 20.3279L25.0947 20.3279V20.3279C25.1303 19.8813 25.1481 19.6581 25.1906 19.4431C25.2879 18.9502 25.482 18.4815 25.7618 18.0641C25.8838 17.8821 26.0291 17.7116 26.3196 17.3706C27.0496 16.514 27.4147 16.0857 27.6287 15.6379C28.1238 14.6021 28.1238 13.3979 27.6287 12.3622C27.4147 11.9143 27.0496 11.486 26.3196 10.6294C26.0291 10.2884 25.8838 10.1179 25.7618 9.93588C25.482 9.51854 25.2879 9.04984 25.1906 8.55694C25.1481 8.34192 25.1303 8.11865 25.0947 7.67211L25.0947 7.67206C25.0052 6.55016 24.9604 5.9892 24.7951 5.52119C24.4127 4.43871 23.5613 3.58726 22.4788 3.20492C22.0108 3.03961 21.4498 2.99485 20.3279 2.90532L20.3279 2.90531C19.8814 2.86968 19.6581 2.85186 19.4431 2.80941C18.9502 2.7121 18.4815 2.51796 18.0641 2.23823C17.882 2.11621 17.7116 1.97093 17.3706 1.68038C16.514 0.950359 16.0857 0.585348 15.6379 0.371302C14.6021 -0.123767 13.3979 -0.123767 12.3621 0.371302C11.9143 0.585346 11.486 0.950366 10.6294 1.68038L10.6293 1.68042Z' fill='white'/%3E%3Cpath d='M20.123 11.0081C20.5679 10.5631 20.5679 9.84168 20.123 9.39671C19.678 8.95175 18.9566 8.95175 18.5116 9.39671L11.7213 16.1871L9.48854 13.9543C9.04357 13.5094 8.32214 13.5094 7.87717 13.9543C7.43221 14.3993 7.43221 15.1207 7.87717 15.5657L10.9156 18.6041C11.3605 19.0491 12.082 19.0491 12.5269 18.6041L20.123 11.0081Z' fill='%230B2F9F'/%3E%3C/svg%3E");
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                }
                         }
 
                         .plan-content {
@@ -481,48 +523,63 @@ main {
 
                                 .plan-header {
                                         display: flex;
+                                        flex-direction: column;
                                         justify-content: space-between;
-                                        align-items: center;
+                                        align-items: flex-start;
                                         margin-bottom: 15px;
+                                        gap: 16px;
 
-                                        h3 {
-                                                font-size: 18px;
-                                                color: #333;
+                                        @media (max-width:768px) {
+                                                gap: 6px;
                                         }
 
-                                        .icon {
-                                                width: 30px;
-                                                height: 30px;
-                                                background-color: #2d2d91;
-                                                border-radius: 50%;
+                                        .hed {
                                                 display: flex;
                                                 align-items: center;
                                                 justify-content: center;
-                                                color: white;
+                                                gap: 18px;
+
+                                                img {
+                                                        width: clamp(1.35rem, 0.5893rem + 3.3810vw, 3.125rem);
+                                                }
+
+                                                h3 {
+                                                        color: #606060;
+                                                        font-size: clamp(0.55rem, 0.2500rem + 1.3333vw, 1.25rem);
+                                                        font-style: normal;
+                                                        font-weight: 500;
+                                                }
                                         }
                                 }
 
                                 .price {
-                                        font-size: 24px;
-                                        font-weight: bold;
-                                        color: #ff6db0;
-                                        margin-bottom: 15px;
+                                        color: #000;
+                                        font-size: clamp(0.75rem, 0.2143rem + 2.3810vw, 2rem);
+                                        font-weight: 700;
+                                        line-height: normal;
                                 }
 
                                 ul {
                                         list-style: none;
                                         padding: 0;
                                         margin: 0;
+                                        text-align: justify;
 
                                         li {
-                                                font-size: 14px;
-                                                color: #333;
-                                                margin-bottom: 10px;
+                                                font-size: clamp(0.55rem, 0.4107rem + 0.6190vw, 0.875rem);
+                                                display: flex;
+                                                margin-bottom: 4px;
 
                                                 &:before {
-                                                        content: "✔";
-                                                        color: #2d2d91;
-                                                        margin-right: 8px;
+                                                        content: "";
+                                                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'%3E%3Cpath d='M10.6293 1.68042C10.2884 1.97094 10.1179 2.11621 9.93589 2.23823C9.51854 2.51796 9.04984 2.7121 8.55694 2.80941C8.34191 2.85186 8.11865 2.86968 7.67211 2.90531L7.6721 2.90532C6.55017 2.99485 5.9892 3.03961 5.52119 3.20492C4.43871 3.58726 3.58726 4.43871 3.20492 5.52119C3.03961 5.9892 2.99485 6.55017 2.90532 7.6721L2.90531 7.67211C2.86968 8.11865 2.85186 8.34191 2.80941 8.55694C2.7121 9.04984 2.51796 9.51854 2.23823 9.93589C2.11621 10.1179 1.97094 10.2884 1.6804 10.6293L1.68038 10.6294C0.950368 11.486 0.585346 11.9143 0.371302 12.3621C-0.123767 13.3979 -0.123767 14.6021 0.371302 15.6379C0.585348 16.0857 0.950358 16.514 1.68038 17.3706L1.68039 17.3707C1.9709 17.7115 2.11621 17.8821 2.23823 18.0641C2.51796 18.4815 2.7121 18.9502 2.80941 19.4431C2.85186 19.6581 2.86968 19.8814 2.90531 20.3279L2.90532 20.3279C2.99485 21.4498 3.03961 22.0108 3.20492 22.4788C3.58726 23.5613 4.43871 24.4127 5.52119 24.7951C5.9892 24.9604 6.55016 25.0052 7.67206 25.0947L7.67211 25.0947C8.11865 25.1303 8.34192 25.1481 8.55694 25.1906C9.04984 25.2879 9.51854 25.482 9.93588 25.7618C10.1179 25.8838 10.2884 26.0291 10.6294 26.3196C11.486 27.0496 11.9143 27.4147 12.3622 27.6287C13.3979 28.1238 14.6021 28.1238 15.6379 27.6287C16.0857 27.4147 16.514 27.0496 17.3706 26.3196C17.7116 26.0291 17.8821 25.8838 18.0641 25.7618C18.4815 25.482 18.9502 25.2879 19.4431 25.1906C19.6581 25.1481 19.8814 25.1303 20.3279 25.0947L20.3279 25.0947C21.4498 25.0052 22.0108 24.9604 22.4788 24.7951C23.5613 24.4127 24.4127 23.5613 24.7951 22.4788C24.9604 22.0108 25.0052 21.4498 25.0947 20.3279L25.0947 20.3279V20.3279C25.1303 19.8813 25.1481 19.6581 25.1906 19.4431C25.2879 18.9502 25.482 18.4815 25.7618 18.0641C25.8838 17.8821 26.0291 17.7116 26.3196 17.3706C27.0496 16.514 27.4147 16.0857 27.6287 15.6379C28.1238 14.6021 28.1238 13.3979 27.6287 12.3622C27.4147 11.9143 27.0496 11.486 26.3196 10.6294C26.0291 10.2884 25.8838 10.1179 25.7618 9.93588C25.482 9.51854 25.2879 9.04984 25.1906 8.55694C25.1481 8.34192 25.1303 8.11865 25.0947 7.67211L25.0947 7.67206C25.0052 6.55016 24.9604 5.9892 24.7951 5.52119C24.4127 4.43871 23.5613 3.58726 22.4788 3.20492C22.0108 3.03961 21.4498 2.99485 20.3279 2.90532L20.3279 2.90531C19.8814 2.86968 19.6581 2.85186 19.4431 2.80941C18.9502 2.7121 18.4815 2.51796 18.0641 2.23823C17.882 2.11621 17.7116 1.97093 17.3706 1.68038C16.514 0.950359 16.0857 0.585348 15.6379 0.371302C14.6021 -0.123767 13.3979 -0.123767 12.3621 0.371302C11.9143 0.585346 11.486 0.950366 10.6294 1.68038L10.6293 1.68042Z' fill='url(%23paint0_linear_59_220)'/%3E%3Cpath d='M20.123 11.0081C20.5679 10.5631 20.5679 9.84168 20.123 9.39671C19.678 8.95175 18.9566 8.95175 18.5116 9.39671L11.7213 16.1871L9.48854 13.9543C9.04358 13.5094 8.32215 13.5094 7.87718 13.9543C7.43222 14.3993 7.43222 15.1207 7.87718 15.5657L10.9156 18.6041C11.3606 19.0491 12.082 19.0491 12.527 18.6041L20.123 11.0081Z' fill='white'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_59_220' x1='23.625' y1='3.85' x2='4.55' y2='22.05' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%232958EC'/%3E%3Cstop offset='1' stop-color='%23FF5DE5'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+                                                        background-size: contain;
+                                                        background-repeat: no-repeat;
+                                                        margin-left: 8px;
+                                                        display: inline-block;
+                                                        width: clamp(0.75rem, 0.4286rem + 1.4286vw, 1.5rem);
+                                                        height: clamp(0.75rem, 0.4286rem + 1.4286vw, 1.5rem);
+
                                                 }
                                         }
                                 }

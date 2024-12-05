@@ -157,3 +157,107 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.number').forEach((numberElement) => {
     observer.observe(numberElement);
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const chartSection = document.getElementById("chart-section");
+    const lineChartCanvas = document.getElementById("line-chart");
+    let chartInitialized = false;
+
+    // Function to initialize the line chart
+    function initializeChart() {
+        var lineChart = lineChartCanvas.getContext('2d');
+
+        // Line chart options
+        var options = {
+            borderWidth: 2,
+            cubicInterpolationMode: 'monotone', // Make the line curvy over zigzag
+            pointRadius: 2,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderWidth: 4
+        };
+
+        // Create linear gradients for the line chart
+        var gradientOne = lineChart.createLinearGradient(0, 0, 0, lineChart.canvas.clientHeight);
+        gradientOne.addColorStop(0, 'rgba(51, 169, 247, 0.3)');
+        gradientOne.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        var gradientTwo = lineChart.createLinearGradient(0, 0, 0, lineChart.canvas.clientHeight);
+        gradientTwo.addColorStop(0, 'rgba(195, 113, 239, 0.15)');
+        gradientTwo.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        new Chart(lineChart, {
+            type: 'line',
+            data: {
+                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Spending',
+                        data: [310, 300, 370, 295, 350, 300, 230, 290],
+                        ...options,
+                        borderColor: '#c371ef',
+                        fill: 'start',
+                        backgroundColor: gradientTwo
+                    },
+                    {
+                        label: 'Emergency',
+                        data: [150, 230, 195, 260, 220, 300, 320, 490],
+                        ...options,
+                        borderColor: '#33a9f7',
+                        fill: 'start',
+                        backgroundColor: gradientOne
+                    }
+                ]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false, // Hide display data about the dataset
+                    },
+                    tooltip: { // Modify graph tooltip
+                        backgroundColor: 'rgba(53, 27, 92, 0.8)',
+                        caretPadding: 5,
+                        boxWidth: 5,
+                        usePointStyle: 'triangle',
+                        boxPadding: 3
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false // Set display to false to hide the x-axis grid
+                        },
+                        beginAtZero: true
+                    },
+                    y: {
+                        ticks: {
+                            callback: function (value, index, values) {
+                                return '$ ' + value; // Prefix '$' to the dataset values
+                            },
+                            stepSize: 100
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Create Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !chartInitialized) {
+                chartInitialized = true; // Ensure the chart is initialized only once
+                initializeChart();
+            }
+        });
+    }, {
+        threshold: 0.5 // Percentage of section visibility required
+    });
+
+    observer.observe(chartSection);
+});

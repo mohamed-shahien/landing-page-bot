@@ -886,7 +886,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                       <div class="d-flex">
-                        <img src="images/f3.png" alt="Icon" class="icon">
+                        <div class="feature_img">
+                          <img src="images/f3.png" alt="Icon" class="w-100 " loading="lazy"> 
+                        </div>
                         <h5 class="card-title">جدولة الرسائل</h5>
                       </div>
                         <p class="card-text">
@@ -904,8 +906,10 @@
                 <div class="card h-100">
                     <div class="card-body">
                       <div class="d-flex">
-                        <img src="images/f2.png" alt="Icon" class="icon">
-                        <h5 class="card-title">رسائل جماعية</h5>
+                        <div class="feature_img">
+                          <img src="images/f2.png" alt="Icon" class="w-100 " loading="lazy"> 
+                        </div>
+                       <h5 class="card-title">رسائل جماعية</h5>
                       </div>
                         <p class="card-text">
                             تشمل استراتيجيات تحسين الأداء تحسين سرعة تحميل الصفحات، تحسين كفاءة الخادم، وتحليل أداء الموقع. تساعد هذه....
@@ -921,8 +925,10 @@
             <div class="col-sm-6 col-lg-4 col-md-3">
                 <div class="card h-100">
                     <div class="card-body">
-                      <div class="d-flex">
-                        <img src="images/f1.png" alt="Icon" class="icon">
+                      <div class="d-flex ">
+                        <div class="feature_img">
+                          <img src="images/f1.png" alt="Icon" class="w-100 " loading="lazy">
+                        </div>
                         <h5 class="card-title">إعادة تعيين API للتطبيق</h5>
                       </div>
                         <p class="card-text">
@@ -940,7 +946,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                       <div class="d-flex ">
-                        <img src="images/f6.png" alt="Icon" class="icon">
+                        <div class="feature_img">
+                          <img src="images/f6.png" alt="Icon" class="w-100 " loading="lazy"> 
+                        </div>
                         <h5 class="card-title">رسائل القوالب</h5>
                       </div>
                         <p class="card-text">
@@ -958,7 +966,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                       <div class="d-flex">
-                        <img src="images/f5.png" alt="Icon" class="icon">
+                        <div class="feature_img">
+                          <img src="images/f5.png" alt="Icon" class="w-100 " loading="lazy"> 
+                        </div>
                         <h5 class="card-title">أزرار الإجراءات</h5>
                       </div>
                         <p class="card-text">
@@ -976,7 +986,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                       <div class="d-flex">
-                        <img src="images/f4.png" alt="Icon" class="icon">
+                        <div class="feature_img">
+                          <img src="images/f4.png" alt="Icon" class="w-100 " loading="lazy"> 
+                        </div>
                         <h5 class="card-title">الرد التلقائي (البوت)</h5>
                       </div>
                         <p class="card-text">
@@ -1044,55 +1056,46 @@
     <!-- contact -->
     <div class="tab-pane fade contact_tab" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"> 
       <div class="container py-5"  style="padding-inline: 200px;">
-        <h2 class="text-center mb-4">ارسل لنا رسالة</h2>
+        <h2 class="text-center">ارسل لنا رسالة</h2>
         <form class="custom-form">
             <div class="row g-3">
                 <div class="col-md-6 position-relative">
-                  <div class="d-flex">
-                    <i class="fa-solid fa-user"></i>
-                    <label for="name" class="form-label">الاسم</label>
+                  <div class="d-flex align-items-center mb-4">
+                    <i class="fa-regular fa-user"></i>
+                     <label for="name" class="form-label m-0">الاسم</label>
                   </div>
-                    <div class="input-icon">
                         <input type="text" id="name" class="form-control" placeholder="ادخل اسمك">
-                       
-                    </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                  <div class="d-flex">
-                    <i class="fa-solid fa-envelope"></i>
-                    <label for="email" class="form-label">البريد الالكتروني</label>
+                  <div class="d-flex align-items-center mb-4">
+                    <i class="fa-regular fa-envelope"></i>
+                    <label for="email" class="form-label m-0">البريد الالكتروني</label>
                   </div>
-                    <div class="input-icon">
                         <input type="email" id="email" class="form-control" placeholder="ادخل بريدك الالكتروني">
-                    </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                  <div class="d-flex">
+                  <div class="d-flex align-items-center mb-4">
                     <i class="fa-solid fa-phone"></i>
-                    <label for="phone" class="form-label">رقم الهاتف</label>
+                    <label for="phone" class="form-label m-0">رقم الهاتف</label>
                   </div>
-                    <div class="input-icon">
-                        <input type="tel" id="phone" class="form-control" placeholder="ادخل رقم الهاتف">
-                    </div>
+                        <input type="text" id="phone" class="form-control" placeholder="ادخل رقم الهاتف">
                 </div>
                 <div class="col-md-6 position-relative">
-                  <div class="d-flex">
+                  <div class="d-flex align-items-center mb-4">
                     <i class="fa-solid fa-tag"></i>
-                    <label for="subject" class="form-label">الموضوع</label>
-                  </div>
-                    <div class="input-icon">
+                    <label for="subject" class="form-label m-0">الموضوع</label>
+                  </div>          
                         <input type="text" id="subject" class="form-control" placeholder="ادخل عنوان الموضوع">
-                    </div>
                 </div>
                 <div class="col-12">
-                  <div class="d-flex">
-
-                    <label for="message" class="form-label">نص الرسالة</label>
+                  <div class="d-flex align-items-center mb-4">
+                    <i class="fa-solid fa-pen"></i>
+                    <label for="message" class="form-label m-0">نص الرسالة</label>
                   </div>
                     <textarea id="message" rows="4" class="form-control" placeholder="ادخل نص الرسالة"></textarea>
                 </div>
                 <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary px-5">ارسل</button>
+                    <button type="submit" class="btn btn-primary px-5 subscribe-btn">ارسال</button>
                 </div>
             </div>
         </form>

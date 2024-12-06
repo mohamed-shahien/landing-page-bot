@@ -509,7 +509,13 @@ main {
   background-repeat: no-repeat;
   border-radius: 24px;
   padding-top: 29px;
+  background-size: cover;
   padding-bottom: 80px;
+}
+.four_tabs .nav-pills .nav-link {
+  font-size: clamp(10px, 0.2143rem + 2.381vw, 24px);
+  color: black;
+  font-weight: 600;
 }
 .four_tabs .tab-content .icon .fa-arrow-left {
   margin-bottom: 1rem;
@@ -518,14 +524,12 @@ main {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  font-size: 28px;
+  font-size: clamp(18px, 0.2143rem + 2.381vw, 28px);
   color: #0B2F9F;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
 }
 .four_tabs .tab-content .icon:hover .fa-arrow-left::before {
   transform: translateX(-10px);
@@ -670,9 +674,15 @@ main {
   --bs-gutter-x: 96px;
   --bs-gutter-y: 72px;
 }
+.four_tabs .tab-content .features_tab .feature_img {
+  max-width: clamp(30px, 0.2143rem + 2.381vw, 40px);
+}
 .four_tabs .tab-content .features_tab h5 {
-  font-size: 24px;
+  font-size: clamp(16px, 0.2143rem + 2.381vw, 24px);
   padding-right: 16px;
+}
+.four_tabs .tab-content .features_tab .d-flex {
+  margin-bottom: clamp(12px, 0.2143rem + 2.381vw, 24px);
 }
 .four_tabs .tab-content .features_tab .card {
   border: none;
@@ -683,9 +693,19 @@ main {
   position: relative;
   padding: 1.5rem;
 }
-@media (max-width: 768px) {
+.four_tabs .tab-content .features_tab .card-body .card-text {
+  font-size: clamp(12px, 0.2143rem + 2.381vw, 20px);
+}
+@media (max-width: 992px) {
   .four_tabs .tab-content .features_tab .container {
     padding-inline: 20px !important;
+  }
+  .four_tabs .tab-content .features_tab .g-4 {
+    --bs-gutter-x: 36px;
+    --bs-gutter-y: 20px;
+  }
+  .four_tabs .tab-content .features_tab .d-flex {
+    align-items: center;
   }
 }
 .four_tabs .tab-content .blogs_tab .g-4 {
@@ -700,62 +720,89 @@ main {
 }
 .four_tabs .tab-content .blogs_tab .card img {
   max-width: 100%;
+  max-height: 179px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
 .four_tabs .tab-content .blogs_tab .card-title {
-  font-size: 24px;
+  font-size: clamp(16px, 0.2143rem + 2.381vw, 24px);
   font-weight: 500;
   color: #000;
 }
 .four_tabs .tab-content .blogs_tab .card-text {
   color: #000000;
-  font-size: 20px;
+  font-size: clamp(12px, 0.2143rem + 2.381vw, 20px);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .four_tabs .tab-content .blogs_tab .container {
     padding-inline: 20px !important;
   }
+  .four_tabs .tab-content .blogs_tab .g-4 {
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px;
+  }
+}
+.four_tabs .tab-content .contact_tab .g-3 {
+  --bs-gutter-x: 96px;
 }
 .four_tabs .tab-content .contact_tab h2 {
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  font-size: clamp(24px, 0.2143rem + 2.381vw, 36px);
+  margin-bottom: clamp(1rem, 0.2143rem + 2.381vw, 40px);
 }
 .four_tabs .tab-content .contact_tab .custom-form .form-label {
-  font-weight: bold;
-  color: #555;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.2143rem + 2.381vw, 20px);
   padding-right: 12px;
 }
-.four_tabs .tab-content .contact_tab .custom-form .input-icon {
-  position: relative;
+.four_tabs .tab-content .contact_tab .custom-form i {
+  color: #292D32;
+  font-size: clamp(0.75rem, 0.2143rem + 2.381vw, 20px);
 }
-.four_tabs .tab-content .contact_tab .custom-form .input-icon input {
-  padding-right: 2.5rem;
+.four_tabs .tab-content .contact_tab .custom-form input, .four_tabs .tab-content .contact_tab .custom-form textarea {
+  padding: clamp(0.25rem, 0.2143rem + 2.381vw, 1rem);
+  border: 1px solid #BEBEBE;
 }
-.four_tabs .tab-content .contact_tab .custom-form .input-icon i {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  color: #888;
-  pointer-events: none;
+.four_tabs .tab-content .contact_tab .custom-form input::-moz-placeholder, .four_tabs .tab-content .contact_tab .custom-form textarea::-moz-placeholder {
+  color: #BEBEBE;
+  font-size: clamp(0.75rem, 0.2143rem + 2.381vw, 18px);
 }
-.four_tabs .tab-content .contact_tab .custom-form textarea {
-  padding-right: 1rem;
+.four_tabs .tab-content .contact_tab .custom-form input::placeholder, .four_tabs .tab-content .contact_tab .custom-form textarea::placeholder {
+  color: #BEBEBE;
+  font-size: clamp(0.75rem, 0.2143rem + 2.381vw, 18px);
 }
-.four_tabs .tab-content .contact_tab .custom-form button {
-  border-radius: 25px;
-  background-color: #1d4ed8;
-  border: none;
+.four_tabs .tab-content .contact_tab .subscribe-btn {
+  margin-top: 24px;
+  text-align: center;
+  padding: 12px;
+  background-color: #161D6F;
+  color: white;
+  font-weight: 500;
+  font-size: clamp(18px, 0.2143rem + 2.381vw, 24px);
+  border-radius: 8px;
+  width: 50%;
+  margin: auto;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.6980392157) inset;
 }
-.four_tabs .tab-content .contact_tab .custom-form button:hover {
-  background-color: #164aa3;
+.four_tabs .tab-content .contact_tab .subscribe-btn:hover {
+  background-color: #21216a;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .four_tabs .tab-content .contact_tab .container {
     padding-inline: 20px !important;
   }
+  .four_tabs .tab-content .contact_tab .mb-4 {
+    margin-bottom: 8px !important;
+  }
+  .four_tabs .tab-content .contact_tab .g-3 {
+    --bs-gutter-x: 30px;
+  }
+  .four_tabs .tab-content .contact_tab .subscribe-btn {
+    width: 80%;
+  }
 }
-
 @keyframes chartjs-render-animation {
   from {
     opacity: 0.99;
@@ -764,13 +811,12 @@ main {
     opacity: 1;
   }
 }
-.chartjs-render-monitor {
+.four_tabs .chartjs-render-monitor {
   animation: chartjs-render-animation 1ms;
 }
-
-.chartjs-size-monitor,
-.chartjs-size-monitor-expand,
-.chartjs-size-monitor-shrink {
+.four_tabs .chartjs-size-monitor,
+.four_tabs .chartjs-size-monitor-expand,
+.four_tabs .chartjs-size-monitor-shrink {
   position: absolute;
   direction: ltr;
   left: 0;
@@ -782,16 +828,14 @@ main {
   visibility: hidden;
   z-index: -1;
 }
-
-.chartjs-size-monitor-expand > div {
+.four_tabs .chartjs-size-monitor-expand > div {
   position: absolute;
   width: 1000000px;
   height: 1000000px;
   left: 0;
   top: 0;
 }
-
-.chartjs-size-monitor-shrink > div {
+.four_tabs .chartjs-size-monitor-shrink > div {
   position: absolute;
   width: 200%;
   height: 200%;

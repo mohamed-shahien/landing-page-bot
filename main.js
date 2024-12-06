@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // تهيئة Swiper الأول (الذي يتحرك تلقائيًا)
     const marqueeSwiper = new Swiper(".marqueeSwiper", {
         slidesPerView: "auto",
         spaceBetween: 0,
         loop: true,
         loopAdditionalSlides: 2,
-        speed: 1000,  // يمكنك تعديل السرعة هنا حسب الحاجة
+        speed: 1000, 
         autoplay: {
             delay: 1000
         },
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         
     });
 
-    // تحديث السلايدر عند تغيير الحجم أو التمرير
     window.addEventListener("resize", function () {
         marqueeSwiper.update();
     });
@@ -25,15 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
         marqueeSwiper.update();
     });
 
-    // تهيئة Swiper الثاني (الذي يحتوي على 3 شرائح في المنتصف)
     const swiperContainer = new Swiper(".swiper-container", {
         spaceBetween: 10,
         centeredSlides: true,
         roundLengths: true,
-        loop: true,  // تكرار السلايدر
-        loopAdditionalSlides: 30, // عدد الشرائح التي تُكرر
+        loop: true,  
+        loopAdditionalSlides: 30, 
         autoplay: {
-            delay: 3000,  // تأخير التحريك التلقائي
+            delay: 3000,  
             disableOnInteraction: false,
         },
         breakpoints: {
@@ -61,37 +58,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const brightness = document.querySelectorAll('.brightness');
 
     if (tabs.length > 0 && indicator) {
-        // دالة لتحديث المؤشر بناءً على التبويب النشط
         const updateIndicator = (activeTab) => {
             indicator.style.width = `${activeTab.offsetWidth}px`;
             indicator.style.height = `${activeTab.offsetHeight}px`;
             indicator.style.left = `${activeTab.offsetLeft}px`;
         };
 
-        // تعيين التبويب الأول كقسم افتراضي عند تحميل الصفحة
         const firstTab = tabs[0];
 
-        // تعيين لون التبويب الأول
         firstTab.style.color = '#000000';
 
-        // إخفاء جميع التبويبات الأخرى
         document.querySelectorAll('.plans').forEach((plan) => {
             plan.style.display = 'none';
         });
 
-        // عرض التبويب الأول
         document.getElementById(firstTab.dataset.tab).style.display = 'flex';
-        updateIndicator(firstTab); // تحديث المؤشر
+        updateIndicator(firstTab); 
 
-        // تعيين السطوع للصورة في التبويب الأول إلى "brightness(100%)"
         brightness.forEach((img, index) => {
             if (index === 0) {
-                img.style.filter = "brightness(0)";  // أول تبويب له سطوع عادي
+                img.style.filter = "brightness(0)"; 
             } else {
-                img.style.filter = "brightness(100%)";  // باقي التبويبات تكون مظلمة
+                img.style.filter = "brightness(100%)"; 
             }
         });
-
         tabs.forEach((button) => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('.plans').forEach((plan) => {
@@ -120,10 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// دالة العد التزايدي
 const startCounting = (numberElement) => {
     const target = +numberElement.getAttribute('data-target');
-    const increment = Math.ceil(target / 100); // تحديد الزيادة
+    const increment = Math.ceil(target / 100); 
     let count = 0;
 
     const updateCounter = () => {
@@ -168,21 +157,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const lineChartCanvas = document.getElementById("line-chart");
     let chartInitialized = false;
 
-    // Function to initialize the line chart
     function initializeChart() {
         var lineChart = lineChartCanvas.getContext('2d');
 
-        // Line chart options
         var options = {
             borderWidth: 2,
-            cubicInterpolationMode: 'monotone', // Make the line curvy over zigzag
+            cubicInterpolationMode: 'monotone', 
             pointRadius: 2,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderWidth: 4
         };
 
-        // Create linear gradients for the line chart
         var gradientOne = lineChart.createLinearGradient(0, 0, 0, lineChart.canvas.clientHeight);
         gradientOne.addColorStop(0, 'rgba(51, 169, 247, 0.3)');
         gradientOne.addColorStop(1, 'rgba(0, 0, 0, 0)');
@@ -194,7 +180,8 @@ document.addEventListener("DOMContentLoaded", function () {
         new Chart(lineChart, {
             type: 'line',
             data: {
-                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+
                 datasets: [
                     {
                         label: 'Spending',
@@ -217,9 +204,9 @@ document.addEventListener("DOMContentLoaded", function () {
             options: {
                 plugins: {
                     legend: {
-                        display: false, // Hide display data about the dataset
+                        display: false, 
                     },
-                    tooltip: { // Modify graph tooltip
+                    tooltip: { 
                         backgroundColor: 'rgba(53, 27, 92, 0.8)',
                         caretPadding: 5,
                         boxWidth: 5,
@@ -230,14 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 scales: {
                     x: {
                         grid: {
-                            display: false // Set display to false to hide the x-axis grid
+                            display: false 
                         },
                         beginAtZero: true
                     },
                     y: {
                         ticks: {
                             callback: function (value, index, values) {
-                                return '$ ' + value; // Prefix '$' to the dataset values
+                                return '$ ' + value; 
                             },
                             stepSize: 100
                         }
@@ -247,16 +234,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Create Intersection Observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !chartInitialized) {
-                chartInitialized = true; // Ensure the chart is initialized only once
+                chartInitialized = true;
                 initializeChart();
             }
         });
     }, {
-        threshold: 0.5 // Percentage of section visibility required
+        threshold: 0.5
     });
 
     observer.observe(chartSection);

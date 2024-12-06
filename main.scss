@@ -1,6 +1,3 @@
-$primary-color: #4b4bfc;
-$secondary-color: #ff69b4;
-
 main {
         overflow: hidden;
 }
@@ -141,10 +138,12 @@ main {
 
 .testimonials {
         padding: 38px;
+
         h2 {
                 font-size: 24px;
                 margin-bottom: 32px;
         }
+
         .swiper-container {
                 .swiper-slide {
                         display: flex;
@@ -594,17 +593,73 @@ $text-color: #333;
 $border-radius: 10px;
 
 .four_tabs {
-        background-image: url(images/tabs_bg.png);
-        background-repeat: no-repeat;
-        border-radius: 24px;
+        background: #F2F5FE;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+        position: relative;
         padding-top: 29px;
-        background-size: cover;
-        padding-bottom: 80px;
+        font-size: clamp(10px, 0.2143rem + 2.3810vw, 24px);
+        color: black;
+        font-weight: 600;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        overflow: hidden;
 
-        .nav-pills .nav-link {
-                font-size: clamp(10px, 0.2143rem + 2.3810vw, 24px);
-                color: black;
-                font-weight: 600;
+        .glow {
+                width: 447px;
+                height: 447px;
+                box-shadow: 0 0 80px 40px rgba(255, 93, 229, 0.25), 0 0 150px 70px rgba(255, 93, 229, 0.3), 0 0 220px 70px rgba(255, 93, 229, 0.35);
+                background: rgba(255, 93, 229, 0.4);
+                border-radius: 50%;
+                filter: blur(150px);
+                -webkit-filter: blur(150px);
+                z-index: 1;
+
+                &_tow {
+                        top: 0;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
+                        -moz-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                        -o-transform: translate(-50%, -50%);
+                }
+
+                &_one {
+
+                        top: 100%;
+                        right: 0;
+                        transform: translate(50%, -50%);
+                        -webkit-transform: translate(50%, -50%);
+                        -moz-transform: translate(50%, -50%);
+                        -ms-transform: translate(50%, -50%);
+                        -o-transform: translate(50%, -50%);
+                }
+        }
+
+        .silvershapes {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                &:first-child {}
+
+                &:last-child {
+
+                        top: 95%;
+                        right: 100%;
+                        transform: translate(50%, -50%);
+                        -webkit-transform: translate(50%, -50%);
+                        -moz-transform: translate(50%, -50%);
+                        -ms-transform: translate(50%, -50%);
+                        -o-transform: translate(50%, -50%);
+                }
+        }
+
+        .nav-link {
+                color: #000;
         }
 
         .nav-pills .nav-link.active,
@@ -649,6 +704,7 @@ $border-radius: 10px;
                         flex-direction: column;
                         gap: 20px;
                         padding: 20px;
+
                         // background: linear-gradient(135deg, #f4f4fc, #e6e9ff);
 
                         .stats_dash {
@@ -799,6 +855,7 @@ $border-radius: 10px;
 
                                         }
                                 }
+
                                 .chart {
                                         background: white;
                                         padding: 20px;
@@ -818,26 +875,32 @@ $border-radius: 10px;
                                                 // height: 300px;
                                         }
                                 }
+
                                 @media (max-width:768px) {
                                         gap: 8px;
+
                                         .stats-panel {
                                                 padding: 8px;
                                                 width: 30%;
+
                                                 .title {
                                                         gap: 5px;
                                                         margin-bottom: 8px;
                                                 }
+
                                                 .stats-list {
                                                         gap: 5px;
 
                                                         li {
                                                                 margin-bottom: 0px;
+
                                                                 .label {
                                                                         gap: 5px;
                                                                 }
 
                                                                 .value {
                                                                         gap: 10px;
+
                                                                         .status {
                                                                                 width: 5px;
                                                                                 height: 5px;
@@ -1082,5 +1145,156 @@ $border-radius: 10px;
                 height: 200%;
                 left: 0;
                 top: 0
+        }
+}
+
+
+
+.main-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding: 20px;
+        height: 90vh;
+        display: flex;
+        align-items: flex-end;
+        .glow {
+                width: 610px;
+                height: 610px;
+                border-radius: 50%;
+                filter: blur(150px);
+
+                -webkit-filter: blur(150px);
+                &_one{
+                        box-shadow:
+                        0 0 80px 40px rgba(161, 207, 255, 0.7),
+                        0 0 150px 70px rgba(161, 207, 255, 0.7);
+                        background: rgba(161, 207, 255, 0.7);
+                        bottom: -50%;
+                        right: 0;
+                }
+
+                &_tow {
+                        box-shadow:
+                        0 0 80px 40px rgba(161, 207, 255, 0.7),
+                        0 0 150px 70px rgba(161, 207, 255, 0.7);
+                        background: rgba(161, 207, 255, 0.7);
+                        top: -50%;
+                        left: -10%;
+                }
+                &_therd {
+                        box-shadow:
+                        0 0 80px 40px rgba(255, 93, 229, 0.25),
+                        0 0 150px 70px rgba(255, 93, 229, 0.3);
+
+                background: rgba(255, 93, 229, 0.4);
+                top: -50%;
+                right: 0;
+                }
+                &_four {
+                        box-shadow:
+                        0 0 80px 40px rgba(255, 93, 229, 0.25),
+                        0 0 150px 70px rgba(255, 93, 229, 0.3);
+
+                background: rgba(255, 93, 229, 0.4);
+                        bottom: -50%;
+                        left: 0%;
+                }
+        }
+        .content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                z-index: 1;
+                .text {
+                        position: relative;
+                        max-width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                        color: #000;
+                        h1 {
+                                font-size: clamp(2rem, 1.4907rem + 2.2326vw, 3.5rem);
+                                font-weight: 600;
+                        }
+                        
+                        p {
+                                font-size: clamp(1.25rem, 0.9953rem + 1.1163vw, 2rem);
+                                font-weight: 500;
+                        }
+                        .icon4 {
+                                        position: absolute;
+                                        width: 100px;
+                                        top: 10%;
+                                        right: -15%;
+                                        animation-delay: 1.5s;
+                                }
+                }
+                .hero_img {
+                        position: relative;
+                        .robot {
+                                max-width: 500px;
+                                margin: 20px 0;
+                        }
+                        
+                        .green-element {
+                                position: absolute;
+                                top: 0;
+                                right: -50%;
+                                transform: translateX(-50%);
+                                animation: float 3s infinite;
+                        }
+
+                                .icon{
+                                        width: 100px;
+                                        position: absolute;
+                                        animation: bounce 2s infinite;
+                                        &.icon1 {
+                                                animation-delay: 0s;
+                                                left: 0;
+                                                top: 10%;
+
+                                        }
+                
+                                        &.icon2 {
+                                                animation-delay: 0.5s;
+                                                right: 0 ;
+                                                top: 50%;
+                                        }
+                
+                                        &.icon3 {
+                                                animation-delay: 1s;
+                                                bottom: 20%;
+                                                left: 0;
+                                        }
+                        
+                        }
+                }
+        }
+
+}
+
+// Animations
+@keyframes float {
+
+        0%,
+        100% {
+                transform: translateX(-50%) translateY(0);
+        }
+
+        50% {
+                transform: translateX(-50%) translateY(-10px);
+        }
+}
+
+@keyframes bounce {
+
+        0%,
+        100% {
+                transform: translateY(0);
+        }
+
+        50% {
+                transform: translateY(-15px);
         }
 }

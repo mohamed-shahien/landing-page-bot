@@ -593,30 +593,41 @@ $secondary-color: #f7f7f7;
 $text-color: #333;
 $border-radius: 10px;
 
-.four_tabs{
-        background-image: url(images/tabs_bg.png); 
+.four_tabs {
+        background-image: url(images/tabs_bg.png);
         background-repeat: no-repeat;
-        border-radius:24px; 
+        border-radius: 24px;
         padding-top: 29px;
         background-size: cover;
         padding-bottom: 80px;
+
         .nav-pills .nav-link {
                 font-size: clamp(10px, 0.2143rem + 2.3810vw, 24px);
                 color: black;
-                font-weight: 600;  
+                font-weight: 600;
         }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+                border-bottom: 0.2px solid #00000070;
+                background: none !important;
+                color: #000 !important;
+                background-image: linear-gradient(0deg, #FF5DE5 3%, rgba(255, 93, 229, 0) 0) !important;
+
+        }
+
         // tabs content
-        .tab-content{
-                .icon{
+        .tab-content {
+                .icon {
 
                         .fa-arrow-left {
                                 margin-bottom: 1rem;
-        
+
                                 &::before {
                                         position: absolute;
                                         bottom: 1rem;
                                         right: 1rem;
-                                        font-size:  clamp(18px, 0.2143rem + 2.3810vw, 28px);
+                                        font-size: clamp(18px, 0.2143rem + 2.3810vw, 28px);
                                         color: #0B2F9F;
                                         cursor: pointer;
                                         transition: 0.3s ease-in-out;
@@ -624,25 +635,27 @@ $border-radius: 10px;
                                         -moz-transition: 0.3s ease-in-out;
                                 }
                         }
+
                         &:hover .fa-arrow-left::before {
                                 transform: translateX(-10px);
                                 -webkit-transform: translateX(-10px);
                                 -moz-transform: translateX(-10px);
-                           
+
                         }
                 }
+
                 .dashboard {
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
                         padding: 20px;
                         // background: linear-gradient(135deg, #f4f4fc, #e6e9ff);
-                
+
                         .stats_dash {
                                 display: flex;
                                 gap: 20px;
                                 justify-content: space-between;
-                
+
                                 .stat-box {
                                         flex: 1;
                                         padding: 20px;
@@ -654,9 +667,9 @@ $border-radius: 10px;
                                         flex-direction: row-reverse;
                                         justify-content: space-between;
                                         align-items: center;
-                
+
                                         i {
-                                                font-size: 28px;
+                                                font-size: clamp(10px, 0.2143rem + 2.3810vw, 28px);
                                                 background: linear-gradient(to left, #7C61E4, #6171E4);
                                                 border-radius: 555px;
                                                 width: 60px;
@@ -666,25 +679,41 @@ $border-radius: 10px;
                                                 align-items: center;
                                                 justify-content: center;
                                         }
-                
+
                                         .label {
                                                 display: flex;
                                                 flex-direction: column;
-                
+
                                                 p {
-                                                        font-size: 14px;
+                                                        font-size: clamp(8px, 0.2143rem + 2.3810vw, 24px);
                                                         color: $text-color;
                                                         margin-bottom: 0;
                                                 }
-                
+
                                                 h2 {
-                                                        font-size: 24px;
+                                                        font-size: clamp(12px, 0.2143rem + 2.3810vw, 24px);
                                                         margin-top: 5px;
                                                 }
                                         }
+
+                                }
+
+                                @media (max-width:768px) {
+                                        padding: 5px;
+                                        gap: 10px;
+
+                                        .stat-box {
+                                                padding: 5px;
+
+                                                i {
+                                                        width: 20px;
+                                                        height: 20px;
+                                                }
+                                        }
+
                                 }
                         }
-                
+
                         .content {
                                 display: flex;
                                 gap: 20px;
@@ -692,7 +721,7 @@ $border-radius: 10px;
                                 $secondary-color: #f7f7f7;
                                 $status-online: #28a745;
                                 $status-offline: #dc3545;
-                
+
                                 .stats-panel {
                                         padding: 20px;
                                         border-radius: 10px;
@@ -700,19 +729,20 @@ $border-radius: 10px;
                                         width: 25%;
                                         border-radius: 8px;
                                         background: #FFF;
+
                                         .title {
                                                 display: flex;
                                                 align-items: center;
                                                 gap: 10px;
-                                                font-size: 18px;
+                                                font-size: clamp(10px, 0.2143rem + 2.3810vw, 18px);
                                                 margin-bottom: 15px;
                                                 color: $primary-color;
-                
+
                                                 i {
-                                                        font-size: 20px;
+                                                        font-size: clamp(8px, 0.2143rem + 2.3810vw, 20px);
                                                 }
                                         }
-                
+
                                         .stats-list {
                                                 list-style: none;
                                                 padding: 0;
@@ -720,275 +750,337 @@ $border-radius: 10px;
                                                 flex-direction: column;
                                                 justify-content: space-between;
                                                 gap: 18px;
-                width: fit-content;
-                margin-inline: auto;
+                                                width: fit-content;
+                                                margin-inline: auto;
+
                                                 li {
                                                         display: flex;
                                                         flex-direction: column;
-                                                        align-items: flex-start ;
+                                                        align-items: flex-start;
                                                         justify-content: space-between;
                                                         margin-bottom: 10px;
-                                                        font-size: 14px;
-                
+                                                        font-size: clamp(6px, 0.2143rem + 2.3810vw, 14px);
+
                                                         .label {
                                                                 display: flex;
                                                                 align-items: center;
                                                                 gap: 10px;
                                                                 color: #333;
-                
+
                                                                 i {
-                                                                        font-size: 16px;
+                                                                        font-size: clamp(8px, 0.2143rem + 2.3810vw, 16px);
                                                                         color: $primary-color;
                                                                 }
                                                         }
-                
+
                                                         .value {
                                                                 font-size: 10px;
                                                                 display: flex;
                                                                 align-items: center;
                                                                 flex-direction: row-reverse;
                                                                 gap: 5px;
-                
+
                                                                 .status {
                                                                         display: inline-block;
                                                                         width: 10px;
                                                                         height: 10px;
                                                                         border-radius: 50%;
-                
+
                                                                         &.status-online {
                                                                                 background-color: $status-online;
                                                                         }
-                
+
                                                                         &.status-offline {
                                                                                 background-color: $status-offline;
                                                                         }
                                                                 }
                                                         }
                                                 }
-                
+
                                         }
                                 }
-                
-                
                                 .chart {
                                         background: white;
                                         padding: 20px;
                                         border-radius: $border-radius;
                                         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                                         width: 75%;
-                
-                
+
+
                                         h3 {
                                                 margin-bottom: 20px;
-                                                font-size: 16px;
+                                                font-size: clamp(12px, 0.2143rem + 2.3810vw, 16px);
                                                 color: $text-color;
                                         }
-                
+
                                         canvas {
                                                 width: 100%;
-                                                height: 300px;
+                                                // height: 300px;
+                                        }
+                                }
+                                @media (max-width:768px) {
+                                        gap: 8px;
+                                        .stats-panel {
+                                                padding: 8px;
+                                                width: 30%;
+                                                .title {
+                                                        gap: 5px;
+                                                        margin-bottom: 8px;
+                                                }
+                                                .stats-list {
+                                                        gap: 5px;
+
+                                                        li {
+                                                                margin-bottom: 0px;
+                                                                .label {
+                                                                        gap: 5px;
+                                                                }
+
+                                                                .value {
+                                                                        gap: 10px;
+                                                                        .status {
+                                                                                width: 5px;
+                                                                                height: 5px;
+                                                                        }
+                                                                }
+                                                        }
+
+                                                }
+                                        }
+
+                                        .chart {
+                                                padding: 10px;
                                         }
                                 }
                         }
+
+                        @media (max-width:768px) {
+                                gap: 10px;
+                                padding: 0;
+                        }
                 }
+
                 // features
-                .features_tab{
-                        .g-4{
+                .features_tab {
+                        .g-4 {
                                 --bs-gutter-x: 96px;
                                 --bs-gutter-y: 72px;
                         }
-                        .feature_img{
+
+                        .feature_img {
                                 max-width: clamp(30px, 0.2143rem + 2.3810vw, 40px);
                         }
-                           h5{
+
+                        h5 {
                                 font-size: clamp(16px, 0.2143rem + 2.3810vw, 24px);
                                 padding-right: 16px;
-                           }   
-                           .d-flex{
+                        }
+
+                        .d-flex {
                                 margin-bottom: clamp(12px, 0.2143rem + 2.3810vw, 24px);
-                           } 
+                        }
+
                         .card {
                                 border: none;
                                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                                 border-radius: 12px;
                         }
-                        
+
                         .card-body {
                                 position: relative;
                                 padding: 1.5rem;
-                                .card-text{
+
+                                .card-text {
                                         font-size: clamp(12px, 0.2143rem + 2.3810vw, 20px);
                                 }
                         }
+
                         @media (max-width:992px) {
-                                .container{
-                                        padding-inline:20px !important;
+                                .container {
+                                        padding-inline: 20px !important;
                                 }
-                                .g-4{
+
+                                .g-4 {
                                         --bs-gutter-x: 36px;
                                         --bs-gutter-y: 20px;
                                 }
-                                .d-flex{
+
+                                .d-flex {
                                         align-items: center;
                                 }
                         }
-                
+
                 }
+
                 // blogs 
-                .blogs_tab{
-                        .g-4{
+                .blogs_tab {
+                        .g-4 {
                                 --bs-gutter-x: 96px;
                                 --bs-gutter-y: 72px;
                         }
+
                         .card {
                                 border: none;
                                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                                 border-radius: 12px;
                                 background: #fff;
-                            }
-                    
-                            .card img {
+                        }
+
+                        .card img {
                                 max-width: 100%;
                                 max-height: 179px;
                                 object-fit: cover;
                                 border-radius: 8px 8px 0 0;
-                            }
-                    
-                            .card-title {
+                        }
+
+                        .card-title {
                                 font-size: clamp(16px, 0.2143rem + 2.3810vw, 24px);
                                 font-weight: 500;
                                 color: #000;
-                            }
-                    
-                            .card-text {
+                        }
+
+                        .card-text {
                                 color: #000000;
                                 font-size: clamp(12px, 0.2143rem + 2.3810vw, 20px);
-                            }
-                            @media (max-width:992px) {
-                                .container{
-                                        padding-inline:20px !important;
+                        }
+
+                        @media (max-width:992px) {
+                                .container {
+                                        padding-inline: 20px !important;
                                 }
-                                .g-4{
+
+                                .g-4 {
                                         --bs-gutter-x: 30px;
                                         --bs-gutter-y: 30px;
                                 }
                         }
-                    
+
                 }
-                
+
                 // contact 
-                .contact_tab{
-                        .g-3{
+                .contact_tab {
+                        .g-3 {
                                 --bs-gutter-x: 96px;
                         }
+
                         h2 {
                                 font-weight: 600;
                                 font-size: clamp(24px, 0.2143rem + 2.3810vw, 36px);
                                 margin-bottom: clamp(1rem, 0.2143rem + 2.3810vw, 40px);
 
-                              }
-                              
-                              .custom-form {
-                               
+                        }
+
+                        .custom-form {
+
                                 .form-label {
-                                  font-weight: 400;
-                                  font-size: clamp(0.75rem, 0.2143rem + 2.3810vw, 20px);
-                                  padding-right: 12px;
-                                
-                                }
-                                i {
-                                        color: #292D32;    
+                                        font-weight: 400;
                                         font-size: clamp(0.75rem, 0.2143rem + 2.3810vw, 20px);
-                                      }
-                              
-                                  input,textarea {
-                                    padding: clamp(0.25rem, 0.2143rem + 2.3810vw, 1rem); 
-                                    border: 1px solid #BEBEBE;
-                                    
-                                  }
-                                  
-                                  input::placeholder ,textarea::placeholder{
+                                        padding-right: 12px;
+
+                                }
+
+                                i {
+                                        color: #292D32;
+                                        font-size: clamp(0.75rem, 0.2143rem + 2.3810vw, 20px);
+                                }
+
+                                input,
+                                textarea {
+                                        padding: clamp(0.25rem, 0.2143rem + 2.3810vw, 1rem);
+                                        border: 1px solid #BEBEBE;
+
+                                }
+
+                                input::placeholder,
+                                textarea::placeholder {
                                         color: #BEBEBE;
                                         font-size: clamp(0.75rem, 0.2143rem + 2.3810vw, 18px);
-                                  }
-                              
-                              }
-                              .subscribe-btn {
+                                }
+
+                        }
+
+                        .subscribe-btn {
                                 margin-top: 24px;
                                 text-align: center;
                                 padding: 12px;
                                 background-color: #161D6F;
                                 color: white;
                                 font-weight: 500;
-                                font-size: clamp(18px, 0.2143rem + 2.3810vw, 24px);
+                                font-size: clamp(14px, 0.2143rem + 2.3810vw, 24px);
                                 border-radius: 8px;
                                 width: 50%;
                                 margin: auto;
                                 transition: all 0.3s;
                                 box-shadow: 0px 0px 7px 0px #FFFFFFB2 inset;
-                                &:hover{
+
+                                &:hover {
                                         background-color: darken(#2d2d91, 10%);
                                 }
                         }
-                              @media (max-width:992px) {
-                                .container{
-                                        padding-inline:20px !important;
+
+                        @media (max-width:992px) {
+                                .container {
+                                        padding-inline: 20px !important;
                                 }
-                                .mb-4{
+
+                                .mb-4 {
                                         margin-bottom: 8px !important;
                                 }
-                                .g-3{
+
+                                .g-3 {
                                         --bs-gutter-x: 30px;
                                 }
-                                .subscribe-btn{
-                                        width:80%;
+
+                                .subscribe-btn {
+                                        width: 80%;
+                                        padding: 8px;
                                 }
                         }
                 }
         }
 
-@keyframes chartjs-render-animation {
-        from {
-                opacity: .99
+        @keyframes chartjs-render-animation {
+                from {
+                        opacity: .99
+                }
+
+                to {
+                        opacity: 1
+                }
         }
 
-        to {
-                opacity: 1
+        .chartjs-render-monitor {
+                animation: chartjs-render-animation 1ms
         }
-}
 
-.chartjs-render-monitor {
-        animation: chartjs-render-animation 1ms
-}
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+                position: absolute;
+                direction: ltr;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                pointer-events: none;
+                visibility: hidden;
+                z-index: -1
+        }
 
-.chartjs-size-monitor,
-.chartjs-size-monitor-expand,
-.chartjs-size-monitor-shrink {
-        position: absolute;
-        direction: ltr;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        pointer-events: none;
-        visibility: hidden;
-        z-index: -1
-}
+        .chartjs-size-monitor-expand>div {
+                position: absolute;
+                width: 1000000px;
+                height: 1000000px;
+                left: 0;
+                top: 0
+        }
 
-.chartjs-size-monitor-expand>div {
-        position: absolute;
-        width: 1000000px;
-        height: 1000000px;
-        left: 0;
-        top: 0
-}
-
-.chartjs-size-monitor-shrink>div {
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        left: 0;
-        top: 0
-}
+        .chartjs-size-monitor-shrink>div {
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                left: 0;
+                top: 0
+        }
 }

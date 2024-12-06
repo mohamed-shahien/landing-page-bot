@@ -737,122 +737,373 @@
       </div>
     </div>
 
-    <div class="dashboard container">
-      <div class="stats_dash">
-        <div class="stat-box">
-          <i class="fa fa-users"></i>
-          <div class="label">
+<!-- ---------------------------------------- -->
 
-            <p>العملاء النشطين</p>
-            <h2 class="number" data-target="504">0</h2>
+<div class="four_tabs container" >
+
+  <ul class="nav nav-pills mb-3 container d-flex justify-content-around" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-dash-tab" data-bs-toggle="pill" data-bs-target="#pills-dash" type="button" role="tab" aria-controls="pills-dash" aria-selected="true">الداشبورد</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-features-tab" data-bs-toggle="pill" data-bs-target="#pills-features" type="button" role="tab" aria-controls="pills-features" aria-selected="false">المميزات</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-blogs-tab" data-bs-toggle="pill" data-bs-target="#pills-blogs" type="button" role="tab" aria-controls="pills-blogs" aria-selected="false">التدوينات</button>
+      
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">التواصل</button>
+      
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <!-- dashboard tab -->
+    <div class="tab-pane fade show active" id="pills-dash" role="tabpanel" aria-labelledby="pills-dash-tab">
+      <div class="dashboard container">
+        <div class="stats_dash">
+          <div class="stat-box">
+            <i class="fa fa-users"></i>
+            <div class="label">
+  
+              <p>العملاء النشطين</p>
+              <h2 class="number" data-target="504">0</h2>
+            </div>
+          </div>
+          <div class="stat-box">
+            <i class="fa fa-calendar"></i>
+            <div class="label">
+  
+              <p>الدعم المفتوح</p>
+              <h2 class="number" data-target="684">0</h2>
+            </div>
+          </div>
+          <div class="stat-box">
+            <i class="fa fa-box"></i>
+            <div class="label">
+  
+              <p>الطلبات المعلقة</p>
+              <h2 class="number" data-target="200">0</h2>
+            </div>
+          </div>
+          <div class="stat-box">
+            <i class="fa fa-th"></i>
+            <div class="label">
+  
+              <p>إجمالى الطلبات</p>
+              <h2 class="number" data-target="1504">0</h2>
+            </div>
           </div>
         </div>
-        <div class="stat-box">
-          <i class="fa fa-calendar"></i>
-          <div class="label">
-
-            <p>الدعم المفتوح</p>
-            <h2 class="number" data-target="684">0</h2>
+  
+        <div class="content">
+          <div class="chart">
+            <h3>نظرة عامة على قيمة المبيعات</h3>
+            <div id="chart-section">
+  
+              <canvas id="line-chart" class="w-full"></canvas>
+            </div>
           </div>
-        </div>
-        <div class="stat-box">
-          <i class="fa fa-box"></i>
-          <div class="label">
-
-            <p>الطلبات المعلقة</p>
-            <h2 class="number" data-target="200">0</h2>
+          <div class="stats-panel">
+            <h3 class="title">
+              <i class="fas fa-chart-line"></i>
+              <span>إحصائيات</span>
+            </h3>
+            <ul class="stats-list">
+              <li>
+                <span class="label">
+                  <i class="fab fa-whatsapp"></i>
+                  حالة خادم واتساب
+                </span>
+                <span class="value">
+                  Online
+                  <span class="status status-online"></span>
+                </span>
+              </li>
+              <li>
+                <span class="label">
+                  <i class="fas fa-desktop"></i>
+                  الأجهزة النشطة
+                </span>
+                <span class="value">
+                  1
+                  <span class="status status-online"></span>
+                </span>
+              </li>
+              <li>
+                <span class="label">
+                  <i class="fas fa-trash"></i>
+                  الأجهزة المهمة
+                </span>
+                <span class="value">
+                  0
+                  <span class="status status-offline"></span>
+                </span>
+              </li>
+              <li>
+                <span class="label">
+                  <i class="fas fa-headphones-alt"></i>
+                  التذاكر المعلقة
+                </span>
+                <span class="value">
+                  0
+                  <span class="status status-online"></span>
+                </span>
+              </li>
+              <li>
+                <span class="label">
+                  <i class="fas fa-envelope"></i>
+                  رسائل اليوم
+                </span>
+                <span class="value">
+                  0
+                  <span class="status status-online"></span>
+                </span>
+              </li>
+              <li>
+                <span class="label">
+                  <i class="fas fa-user-plus"></i>
+                  المستخدمون الجدد
+                </span>
+                <span class="value">
+                  0
+                  <span class="status status-online"></span>
+                </span>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="stat-box">
-          <i class="fa fa-th"></i>
-          <div class="label">
-
-            <p>إجمالى الطلبات</p>
-            <h2 class="number" data-target="1504">0</h2>
-          </div>
+  
         </div>
       </div>
-
-      <div class="content">
-        <div class="chart">
-          <h3>نظرة عامة على قيمة المبيعات</h3>
-          <div id="chart-section">
-
-            <canvas id="line-chart" class="w-full"></canvas>
-          </div>
-        </div>
-        <div class="stats-panel">
-          <h3 class="title">
-            <i class="fas fa-chart-line"></i>
-            <span>إحصائيات</span>
-          </h3>
-          <ul class="stats-list">
-            <li>
-              <span class="label">
-                <i class="fab fa-whatsapp"></i>
-                حالة خادم واتساب
-              </span>
-              <span class="value">
-                Online
-                <span class="status status-online"></span>
-              </span>
-            </li>
-            <li>
-              <span class="label">
-                <i class="fas fa-desktop"></i>
-                الأجهزة النشطة
-              </span>
-              <span class="value">
-                1
-                <span class="status status-online"></span>
-              </span>
-            </li>
-            <li>
-              <span class="label">
-                <i class="fas fa-trash"></i>
-                الأجهزة المهمة
-              </span>
-              <span class="value">
-                0
-                <span class="status status-offline"></span>
-              </span>
-            </li>
-            <li>
-              <span class="label">
-                <i class="fas fa-headphones-alt"></i>
-                التذاكر المعلقة
-              </span>
-              <span class="value">
-                0
-                <span class="status status-online"></span>
-              </span>
-            </li>
-            <li>
-              <span class="label">
-                <i class="fas fa-envelope"></i>
-                رسائل اليوم
-              </span>
-              <span class="value">
-                0
-                <span class="status status-online"></span>
-              </span>
-            </li>
-            <li>
-              <span class="label">
-                <i class="fas fa-user-plus"></i>
-                المستخدمون الجدد
-              </span>
-              <span class="value">
-                0
-                <span class="status status-online"></span>
-              </span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
+  
     </div>
+    <!-- features tab -->
+    <div class="tab-pane fade features_tab" id="pills-features" role="tabpanel" aria-labelledby="pills-features-tab" >
+      <div class="container py-5" style="padding-inline:120px;">
+        <div class="row flex-row-reverse g-4">
+            <!-- Card 1 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <img src="images/f3.png" alt="Icon" class="icon">
+                        <h5 class="card-title">جدولة الرسائل</h5>
+                      </div>
+                        <p class="card-text">
+                            تشمل استراتيجيات تحسين محركات البحث (SEO) تقنيات لتحسين ظهور الموقع في نتائج البحث. تشمل هذه التقنيات تح....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <img src="images/f2.png" alt="Icon" class="icon">
+                        <h5 class="card-title">رسائل جماعية</h5>
+                      </div>
+                        <p class="card-text">
+                            تشمل استراتيجيات تحسين الأداء تحسين سرعة تحميل الصفحات، تحسين كفاءة الخادم، وتحليل أداء الموقع. تساعد هذه....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <img src="images/f1.png" alt="Icon" class="icon">
+                        <h5 class="card-title">إعادة تعيين API للتطبيق</h5>
+                      </div>
+                        <p class="card-text">
+                            تشمل استراتيجيات الأمان تعزيز الحماية من الهجمات الإلكترونية، تأمين البيانات، وتطبيق أفضل الممارسات....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Card 4 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex ">
+                        <img src="images/f6.png" alt="Icon" class="icon">
+                        <h5 class="card-title">رسائل القوالب</h5>
+                      </div>
+                        <p class="card-text">
+                            تشمل استراتيجيات تحسين تجربة المستخدم (UX) تصميم واجهات تفاعلية، تحسين سرعة تحميل الصفحات، وضمان تلبية احت....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Card 5 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <img src="images/f5.png" alt="Icon" class="icon">
+                        <h5 class="card-title">أزرار الإجراءات</h5>
+                      </div>
+                        <p class="card-text">
+                            تحليل البيانات يتضمن جمع البيانات وتحليلها للحصول على رؤى قيمة تدعم اتخاذ القرارات. تشمل الأدوات المستخدمة....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Card 6 -->
+            <div class="col-sm-6 col-lg-4 col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <img src="images/f4.png" alt="Icon" class="icon">
+                        <h5 class="card-title">الرد التلقائي (البوت)</h5>
+                      </div>
+                        <p class="card-text">
+                            تتضمن أدوات إدارة علاقات العملاء (CRM) تتبع التفاعلات مع العملاء، إدارة المبيعات، وتحليل بيانات العملاء....
+                        </p>
+                        <div class="icon">
+                          <i class="fa-solid fa-arrow-left "></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- blogs tab -->
+    <div class="tab-pane fade blogs_tab" id="pills-blogs" role="tabpanel" aria-labelledby="pills-blogs-tab">  
+      <div class="container py-5"  style="padding-inline: 130px;">
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img src="images/blog1.png" alt="A guide to using WhatsApp" />
+                    <div class="card-body ">
+                        <h5 class="card-title">إعلانات النقر للدردشة على واتساب- أداة حيوية لترسانة تسويقك</h5>
+                        <p class="card-text">
+                          في مشهد الأعمال التنافسي، إذا كان هناك شيء واحد قد أدى إلى النمو الكبير لأعمال الإنترنت، فهو الإعلان الرقمي. الصناعة التي تبلغ قيمتها 600 مليار دولار لها تأثير كبير على العملاء - من يشتري ماذا وبالتال... </p>
+                          <div class="icon">
+                            <i class="fa-solid fa-arrow-left "></i>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img src="images/blog2.png" alt="4 Quick Ways To Boost Sales" />
+                    <div class="card-body">
+                        <h5 class="card-title">تعزيز نمو عملك عبر الرسائل عالية الجودة على واتساب</h5>
+                        <p class="card-text">
+                          في عالم يتزايد فيه commoditized، بفضل التكنولوجيا، هو سر مفتوح أن التركيز على العميل هو الفارق الحقيقي. هذه الحقيقة الإنجيلية ذات صلة بكل وظيفة عمل، ولكن في التسويق لا غنى عنها. السبب هو احتياجات وتطل... </p>
+                          <div class="icon">
+                            <i class="fa-solid fa-arrow-left "></i>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center " style="margin-top: 48px;">
+          <button class="cta-btn">
+            شاهد المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 56 56" fill="none">
+              <path
+                d="M4.66661 28.0001C4.66661 40.8867 15.1133 51.3334 27.9999 51.3334C40.8866 51.3334 51.3333 40.8867 51.3333 28.0001C51.3333 15.1134 40.8866 4.66673 27.9999 4.66673C15.1133 4.66673 4.66661 15.1134 4.66661 28.0001Z"
+                stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M36.1666 28L22.1666 28" stroke="white" stroke-width="3.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M26.8333 21L19.8333 28L26.8333 35" stroke="white" stroke-width="3.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+    </div>
+    </div>
+  
+    <!-- contact -->
+    <div class="tab-pane fade contact_tab" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"> 
+      <div class="container py-5"  style="padding-inline: 200px;">
+        <h2 class="text-center mb-4">ارسل لنا رسالة</h2>
+        <form class="custom-form">
+            <div class="row g-3">
+                <div class="col-md-6 position-relative">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-user"></i>
+                    <label for="name" class="form-label">الاسم</label>
+                  </div>
+                    <div class="input-icon">
+                        <input type="text" id="name" class="form-control" placeholder="ادخل اسمك">
+                       
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-envelope"></i>
+                    <label for="email" class="form-label">البريد الالكتروني</label>
+                  </div>
+                    <div class="input-icon">
+                        <input type="email" id="email" class="form-control" placeholder="ادخل بريدك الالكتروني">
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-phone"></i>
+                    <label for="phone" class="form-label">رقم الهاتف</label>
+                  </div>
+                    <div class="input-icon">
+                        <input type="tel" id="phone" class="form-control" placeholder="ادخل رقم الهاتف">
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <div class="d-flex">
+                    <i class="fa-solid fa-tag"></i>
+                    <label for="subject" class="form-label">الموضوع</label>
+                  </div>
+                    <div class="input-icon">
+                        <input type="text" id="subject" class="form-control" placeholder="ادخل عنوان الموضوع">
+                    </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex">
 
+                    <label for="message" class="form-label">نص الرسالة</label>
+                  </div>
+                    <textarea id="message" rows="4" class="form-control" placeholder="ادخل نص الرسالة"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary px-5">ارسل</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+  
+ 
 
 
 

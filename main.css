@@ -21,6 +21,7 @@ main {
   bottom: -60px;
   right: -50px;
   z-index: -1;
+  opacity: 0.7;
 }
 .stats .stat {
   padding: 40px 20px;
@@ -34,7 +35,7 @@ main {
 }
 @media (max-width: 768px) {
   .stats .stat {
-    padding: 20px 27px;
+    padding: 20px;
     border-radius: 6px;
     min-width: 150px;
   }
@@ -196,7 +197,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-block: clamp(2.5rem, 1.2676rem + 5.2582vw, 6rem);
   position: relative;
 }
 @media (max-width: 768px) {
@@ -209,6 +209,7 @@ main {
   position: absolute;
   bottom: -20px;
   left: -40px;
+  opacity: 0.7;
 }
 .container_robot .content {
   display: flex;
@@ -242,28 +243,10 @@ main {
 .container_robot .robot .robot-img {
   width: 100%;
   max-width: 524px;
-  animation: shake 1.5s infinite;
 }
 @media (max-width: 768px) {
   .container_robot .robot .robot-img {
     max-width: 260px;
-  }
-}
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  75% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 
@@ -371,7 +354,7 @@ main {
 }
 .tabs-container .plans .plan-card {
   background: linear-gradient(to bottom, #fff, #f9f9f9);
-  min-width: 160px;
+  min-width: 157px;
   width: 100%;
   max-width: 513px;
   padding: 20px;
@@ -388,6 +371,7 @@ main {
   .tabs-container .plans .plan-card {
     width: -moz-max-content;
     width: max-content;
+    padding: 12px;
   }
 }
 .tabs-container .plans .plan-card.default_center {
@@ -492,12 +476,14 @@ main {
   display: block;
   margin-top: 20px;
   text-align: center;
-  padding: 10px;
+  padding-block: 10px;
+  padding-inline: 8px;
   background-color: #2d2d91;
   color: white;
   font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
+  font-size: 14px;
   transition: all 0.3s;
 }
 .tabs-container .plans .plan-card .plan-content .subscribe-btn:hover {
@@ -597,9 +583,15 @@ main {
   padding: 20px;
 }
 .four_tabs .tab-content .dashboard .stats_dash {
-  display: flex;
+  display: grid;
   gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .four_tabs .tab-content .dashboard .stats_dash {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .four_tabs .tab-content .dashboard .stats_dash .stat-box {
   flex: 1;
@@ -653,6 +645,12 @@ main {
 .four_tabs .tab-content .dashboard .content {
   display: flex;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .four_tabs .tab-content .dashboard .content {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .four_tabs .tab-content .dashboard .content .stats-panel {
   padding: 20px;
@@ -742,7 +740,7 @@ main {
   }
   .four_tabs .tab-content .dashboard .content .stats-panel {
     padding: 8px;
-    width: 30%;
+    width: 100%;
   }
   .four_tabs .tab-content .dashboard .content .stats-panel .title {
     gap: 5px;
@@ -766,6 +764,8 @@ main {
   }
   .four_tabs .tab-content .dashboard .content .chart {
     padding: 10px;
+    flex-direction: column;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -954,10 +954,16 @@ main {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 20px;
-  height: 90vh;
+  padding: 18px;
+  height: 80vh;
   display: flex;
   align-items: flex-end;
+}
+@media (min-width: 768px) {
+  .main-container {
+    padding: 20px;
+    height: 90vh;
+  }
 }
 .main-container .glow {
   width: 610px;
@@ -996,13 +1002,24 @@ main {
   justify-content: space-between;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .main-container .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .main-container .content .text {
   position: relative;
-  max-width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
   color: #000;
+}
+@media (min-width: 768px) {
+  .main-container .content .text {
+    gap: 40px;
+    max-width: 50%;
+  }
 }
 .main-container .content .text h1 {
   font-size: clamp(2rem, 1.4907rem + 2.2326vw, 3.5rem);
@@ -1023,6 +1040,7 @@ main {
   position: relative;
 }
 .main-container .content .hero_img .robot {
+  width: 100%;
   max-width: 500px;
   margin: 20px 0;
 }
@@ -1032,6 +1050,12 @@ main {
   right: -50%;
   transform: translateX(-50%);
   animation: float 3s infinite;
+  width: clamp(6.625rem, 3.6066rem + 13.6041vw, 15rem);
+}
+@media (max-width: 768px) {
+  .main-container .content .hero_img .green-element {
+    right: -20%;
+  }
 }
 .main-container .content .hero_img .icon {
   width: 100px;

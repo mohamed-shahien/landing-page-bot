@@ -152,7 +152,39 @@ document.querySelectorAll('.number').forEach((numberElement) => {
 
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
+    // التأكد من دعم IntersectionObserver
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const animName = entry.target.getAttribute("animation-boto") || "animate__fadeInUp";
+          const animDelay = entry.target.getAttribute("boto-delay") || "0s";
+  
+          entry.target.classList.add("animate__animated", animName);
+          entry.target.style.animationDelay = animDelay;
+  
+          observer.unobserve(entry.target);
+  
+          entry.target.addEventListener("animationend", () => {
+            entry.target.classList.remove("animate__animated", animName);
+            entry.target.style.animationDelay = "";
+          });
+        }
+      });
+    });
+  
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    if (elements.length === 0) {
+      console.warn("No elements with the class 'animate-on-scroll' found.");
+    }
+    elements.forEach((el) => observer.observe(el));
+  } else {
+    console.error("IntersectionObserver is not supported by this browser.");
+  }
+   
     const chartSection = document.getElementById("chart-section");
     const lineChartCanvas = document.getElementById("line-chart");
     let chartInitialized = false;
